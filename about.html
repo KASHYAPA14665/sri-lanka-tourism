@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Sri Lanka Travel</title>
+    <title>About Us </title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -64,15 +65,17 @@
 <body>
 
 <!-- HEADER -->
-<header class="d-flex justify-content-between align-items-center">
-    <div><strong>Sri Lanka Travel</strong></div>
-    <nav>
+<header>
+    <nav class="navbar">
         <a href="index.html">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
     </nav>
-</header>
 
+    <div id="clock" class="timeline">
+        <h4 id="date-time"></h4>
+    </div>
+</header>
 <!-- HERO -->
 <section class="hero">
     <h1>About Our Website</h1>
