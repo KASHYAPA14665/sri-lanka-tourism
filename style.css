@@ -220,4 +220,37 @@ header {
 @keyframes runningTime {
     from { width: 100%; }
     to { width: 0; }
+
+    -----------------------------------------
+
+    /* Animation for the Main Image when 'Next' is clicked */
+.carousel.next .list .item:nth-child(1) img {
+    width: 150px;       /* Start at thumbnail width */
+    height: 220px;      /* Start at thumbnail height */
+    position: absolute;
+    left: 50%;          /* Positioned where thumbnail is */
+    bottom: 50px;
+    border-radius: 20px;
+    animation: expandImage 0.5s linear 1 forwards;
+}
+
+@keyframes expandImage {
+    to {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        border-radius: 0;
+    }
+}
+
+/* Ensure the big images are always hidden except the active one */
+.carousel .list .item {
+    display: none;
+}
+
+.carousel .list .item:nth-child(1) {
+    display: block;
+    z-index: 1;
+
 }
