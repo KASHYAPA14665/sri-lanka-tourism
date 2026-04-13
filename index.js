@@ -48,53 +48,6 @@ function showSlider(type) {
     }, timeRunning);
 
 
-    ----------------------------------------------
-        let nextBtn = document.getElementById('next');
-let prevBtn = document.getElementById('prev');
-let carousel = document.querySelector('.carousel');
-let listHTML = document.querySelector('.carousel .list');
-let thumbnailHTML = document.querySelector('.carousel .thumbnail');
 
-nextBtn.onclick = function(){
-    showSlider('next');
-}
-
-prevBtn.onclick = function(){
-    showSlider('prev');
-}
-
-let unClickable; 
-
-function showSlider(type){
-    // Prevent multiple clicks during animation
-    nextBtn.style.pointerEvents = 'none';
-    prevBtn.style.pointerEvents = 'none';
-
-    let itemSlider = document.querySelectorAll('.carousel .list .item');
-    let itemThumbnail = document.querySelectorAll('.carousel .thumbnail .item');
-
-    if(type === 'next'){
-        // Move the first big image to the end
-        listHTML.appendChild(itemSlider[0]);
-        // Move the first thumbnail to the end
-        thumbnailHTML.appendChild(itemThumbnail[0]);
-        carousel.classList.add('next');
-    } else {
-        // Move the last big image to the front
-        let positionLastItem = itemSlider.length - 1;
-        listHTML.prepend(itemSlider[positionLastItem]);
-        // Move the last thumbnail to the front
-        thumbnailHTML.prepend(itemThumbnail[positionLastItem]);
-        carousel.classList.add('prev');
-    }
-
-    // Remove the class after animation finishes (0.5s match CSS)
-    clearTimeout(unClickable);
-    unClickable = setTimeout(() => {
-        carousel.classList.remove('next');
-        carousel.classList.remove('prev');
-        nextBtn.style.pointerEvents = 'auto';
-        prevBtn.style.pointerEvents = 'auto';
-    }, 500);
 }
 
