@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Sri Lanka | The Pearl of the Indian Ocean</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for easy styling */
+        :root {
+            --primary: #2d5a27;
+            --accent: #f39c12;
+            --light: #f4f4f4;
+            --dark: #1a1a1a;
+            --glass: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        header {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+
+        /* Filter/Section Title */
+        .container {
+            max-width: 1200px;
+            margin: -50px auto 50px;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* The Grid */
+        .explore-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        /* Card Styling */
+        .card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-15px);
+        }
+
+        .card-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .category-tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            background: var(--primary);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .card h3 {
+            margin: 15px 0 10px;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--dark);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            .container { margin-top: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Explore Sri Lanka</h1>
+        <p>Journey through emerald tea hills, ancient rock fortresses, and golden sandy beaches.</p>
+    </header>
+
+    <div class="container">
+        <div class="section-title">
+            <h2>Most Beautiful Destinations</h2>
+            <div style="width: 50px; height: 4px; background: var(--accent); margin: 10px auto;"></div>
+        </div>
+
+        <div class="explore-grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1588598116712-32a524a87c10?auto=format&fit=crop&q=80&w=800" alt="Sigiriya" class="card-img">
+                <div class="card-content">
+                    <span class="category-tag">Heritage</span>
+                    <h3>Sigiriya Rock</h3>
+                    <p>The "Lion Rock" is an ancient volcanic plug that holds the ruins of an upper palace, famous for its frescoes and water gardens.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1552423158-958265b7725b?auto=format&fit=crop&q=80&w=800" alt="Ella" class="card-img">
+                <div class="card-content">
+                    <span class="category-tag">Nature</span>
+                    <h3>Ella Highlands</h3>
+                    <p>Known for the Nine Arches Bridge and Little Adam's Peak, Ella offers some of the most breathtaking misty mountain views.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1543161394-a9578278278f?auto=format&fit=crop&q=80&w=800" alt="Mirissa" class="card-img">
+                <div class="card-content">
+                    <span class="category-tag">Coastal</span>
+                    <h3>Mirissa Beach</h3>
+                    <p>Home to the famous Coconut Tree Hill, Mirissa is the perfect spot for whale watching and enjoying tropical sunsets.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1590509835473-b31c5095327f?auto=format&fit=crop&q=80&w=800" alt="Galle" class="card-img">
+                <div class="card-content">
+                    <span class="category-tag">Culture</span>
+                    <h3>Galle Dutch Fort</h3>
+                    <p>A UNESCO World Heritage site where 17th-century colonial architecture meets vibrant boutique shops and cafes.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1625244724123-1fbc8e612803?auto=format&fit=crop&q=80&w=800" alt="Kandy" class="card-img">
+                <div class="card-content">
+                    <span class="category-tag">Spiritual</span>
+                    <h3>Temple of the Tooth</h3>
+                    <p>Located in the heart of Kandy, this sacred temple houses the relic of the tooth of the Buddha within a royal palace complex.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1580790753034-783637e1a90c?auto=format&fit=crop&q=80&w=800" alt="Yala" class="card-img">
+                <div class="card-content">
+                    <span class="category-tag">Wildlife</span>
+                    <h3>Yala National Park</h3>
+                    <p>Experience a safari through dry woodlands and lagoons to spot Leopards, Elephants, and diverse bird species.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Explore Sri Lanka Project. All rights reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; color: #888;">Designed for the most beautiful places in the island.</p>
+    </footer>
+
+</body>
+</html>
