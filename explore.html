@@ -9,10 +9,10 @@
 
 <style>
 :root {
-    --primary: #2d5a27;
-    --accent: #f39c12;
-    --light: #f4f4f4;
-    --dark: #1a1a1a;
+    --primary:#2d5a27;
+    --accent:#f39c12;
+    --dark:#1a1a1a;
+    --light:#f4f4f4;
 }
 
 * {
@@ -23,20 +23,20 @@
 }
 
 body {
-    background: var(--light);
+    background:var(--light);
 }
 
 /* NAVBAR */
 .navbar {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    padding: 15px 40px;
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:15px 40px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background: rgba(0,0,0,0.5);
-    backdrop-filter: blur(8px);
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(10px);
     z-index:1000;
 }
 
@@ -44,10 +44,11 @@ body {
     color:white;
     text-decoration:none;
     margin-left:20px;
+    transition:0.3s;
 }
 
 .navbar a:hover {
-    color: var(--accent);
+    color:var(--accent);
 }
 
 /* HERO */
@@ -71,7 +72,7 @@ header h1 {
     font-size:3rem;
 }
 
-/* CONTENT */
+/* GRID */
 .container {
     max-width:1200px;
     margin:50px auto;
@@ -89,7 +90,8 @@ header h1 {
     background:white;
     border-radius:15px;
     overflow:hidden;
-    box-shadow:0 10px 20px rgba(0,0,0,0.1);
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    cursor:pointer;
     transition:0.3s;
 }
 
@@ -107,15 +109,36 @@ header h1 {
     padding:20px;
 }
 
-/* BUTTON */
-.btn {
-    display:inline-block;
-    margin-top:10px;
-    padding:8px 15px;
-    background:var(--dark);
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
+/* POPUP */
+.popup {
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+    z-index:2000;
+}
+
+.popup-content {
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    max-width:500px;
+    width:90%;
+    text-align:center;
+    position:relative;
+}
+
+.close {
+    position:absolute;
+    top:10px;
+    right:15px;
+    font-size:25px;
+    cursor:pointer;
 }
 
 /* FOOTER */
@@ -130,90 +153,124 @@ footer {
 
 <body>
 
-<nav class="navbar">
+<!-- NAVBAR -->
+<div class="navbar">
     <div style="color:white;font-weight:700;">Sri Lanka</div>
     <div>
         <a href="#">Home</a>
-        <a href="#">About</a>
         <a href="#">Explore</a>
         <a href="#">Contact</a>
     </div>
-</nav>
+</div>
 
+<!-- HERO -->
 <header>
     <h1>Explore Sri Lanka</h1>
-    <p>Discover the beauty of the island</p>
+    <p>Discover the beauty of paradise island</p>
 </header>
 
+<!-- CONTENT -->
 <div class="container">
 <div class="explore-grid">
 
-<!-- Sigiriya -->
-<div class="card">
+<div class="card" onclick="openPopup('sigiriya','Sigiriya Rock')">
 <img src="https://images.unsplash.com/photo-1593693411515-c20261bcad6e?auto=format&fit=crop&w=800&q=80"
 onerror="this.src='https://via.placeholder.com/800x400?text=Image+Unavailable'">
 <div class="card-content">
 <h3>Sigiriya Rock</h3>
-<p>Ancient rock fortress and UNESCO site.</p>
+<p>Ancient rock fortress.</p>
 </div>
 </div>
 
-<!-- Ella -->
-<div class="card">
+<div class="card" onclick="openPopup('ella','Ella')">
 <img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=800&q=80"
 onerror="this.src='https://via.placeholder.com/800x400?text=Image+Unavailable'">
 <div class="card-content">
 <h3>Ella</h3>
-<p>Beautiful mountain village with views.</p>
+<p>Mountain paradise views.</p>
 </div>
 </div>
 
-<!-- Mirissa -->
-<div class="card">
+<div class="card" onclick="openPopup('mirissa','Mirissa Beach')">
 <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
 onerror="this.src='https://via.placeholder.com/800x400?text=Image+Unavailable'">
 <div class="card-content">
 <h3>Mirissa Beach</h3>
-<p>Famous for whale watching and sunsets.</p>
+<p>Beautiful coastal destination.</p>
 </div>
 </div>
 
-<!-- Galle -->
-<div class="card">
+<div class="card" onclick="openPopup('galle','Galle Fort')">
 <img src="https://images.unsplash.com/photo-1586500036706-41963de24d8b?auto=format&fit=crop&w=800&q=80"
 onerror="this.src='https://via.placeholder.com/800x400?text=Image+Unavailable'">
 <div class="card-content">
 <h3>Galle Fort</h3>
-<p>Historic Dutch fort and coastal city.</p>
+<p>Historic Dutch fort.</p>
 </div>
 </div>
 
-<!-- Kandy -->
-<div class="card">
+<div class="card" onclick="openPopup('kandy','Kandy Temple')">
 <img src="https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?auto=format&fit=crop&w=800&q=80"
 onerror="this.src='https://via.placeholder.com/800x400?text=Image+Unavailable'">
 <div class="card-content">
-<h3>Kandy Temple</h3>
-<p>Sacred Temple of the Tooth Relic.</p>
+<h3>Kandy</h3>
+<p>Spiritual capital of Sri Lanka.</p>
 </div>
 </div>
 
-<!-- Yala -->
-<div class="card">
+<div class="card" onclick="openPopup('yala','Yala National Park')">
 <img src="https://images.unsplash.com/photo-1549366021-9f761d040a94?auto=format&fit=crop&w=800&q=80"
 onerror="this.src='https://via.placeholder.com/800x400?text=Image+Unavailable'">
 <div class="card-content">
 <h3>Yala National Park</h3>
-<p>Best place to see leopards in Sri Lanka.</p>
+<p>Wildlife safari destination.</p>
 </div>
 </div>
 
 </div>
 </div>
 
+<!-- POPUP -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close">&times;</span>
+        <h2 id="popup-title"></h2>
+        <p id="popup-text"></p>
+    </div>
+</div>
+
+<!-- FOOTER -->
 <footer>
 <p>© 2026 Explore Sri Lanka</p>
 </footer>
+
+<!-- SCRIPT -->
+<script>
+const places = {
+    sigiriya: "Sigiriya is an ancient rock fortress built by King Kashyapa. It is famous for frescoes and gardens.",
+    ella: "Ella is known for Nine Arches Bridge, hiking trails, and tea plantations.",
+    mirissa: "Mirissa is popular for whale watching, surfing, and sunsets.",
+    galle: "Galle Fort is a UNESCO heritage site with colonial architecture.",
+    kandy: "Kandy is home to the Temple of the Tooth Relic.",
+    yala: "Yala National Park is famous for leopards and safaris."
+};
+
+function openPopup(place,title){
+    document.getElementById("popup").style.display="flex";
+    document.getElementById("popup-title").innerText=title;
+    document.getElementById("popup-text").innerText=places[place];
+}
+
+document.querySelector(".close").onclick = () => {
+    document.getElementById("popup").style.display="none";
+}
+
+window.onclick = function(e){
+    if(e.target.id==="popup"){
+        document.getElementById("popup").style.display="none";
+    }
+}
+</script>
 
 </body>
 </html>
