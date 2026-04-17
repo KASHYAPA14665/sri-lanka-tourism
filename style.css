@@ -33,7 +33,16 @@ header {
     font-weight: 800;
     letter-spacing: 2px;
 }
+.navbar-custom{
 
+     max-width: 1200px;
+    margin: auto;
+    padding: 20px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .navbar-custom a {
     text-decoration: none;
     color: var(--text-color);
