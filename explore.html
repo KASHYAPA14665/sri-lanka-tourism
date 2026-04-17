@@ -25,7 +25,9 @@
 body {
     background:var(--light);
 }
-
+body.no-scroll {
+    overflow: hidden;
+}
 /* NAVBAR */
 .navbar {
     position:fixed;
@@ -124,13 +126,17 @@ header h1 {
 }
 
 .popup-content {
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    max-width:500px;
-    width:90%;
-    text-align:center;
-    position:relative;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+
+    /* ✅ FIX ADDED */
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .close {
@@ -256,19 +262,23 @@ const places = {
     yala: "Yala National Park is famous for leopards and safaris."
 };
 
-function openPopup(place,title){
-    document.getElementById("popup").style.display="flex";
-    document.getElementById("popup-title").innerText=title;
-    document.getElementById("popup-text").innerText=places[place];
+function openPopup(place, title){
+    document.getElementById("popup").style.display = "flex";
+    document.getElementById("popup-title").innerText = title;
+    document.getElementById("popup-text").innerText = places[place];
+
+    document.body.classList.add("no-scroll");
 }
 
 document.querySelector(".close").onclick = () => {
-    document.getElementById("popup").style.display="none";
+    document.getElementById("popup").style.display = "none";
+    document.body.classList.remove("no-scroll");
 }
 
 window.onclick = function(e){
-    if(e.target.id==="popup"){
-        document.getElementById("popup").style.display="none";
+    if(e.target.id === "popup"){
+        document.getElementById("popup").style.display = "none";
+        document.body.classList.remove("no-scroll");
     }
 }
 </script>
