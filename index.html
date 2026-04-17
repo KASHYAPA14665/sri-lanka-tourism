@@ -11,91 +11,19 @@
     <link rel="stylesheet" media="screen and (min-device-width: 1440px)" href="desktop-style.css" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9025002091352978"
      crossorigin="anonymous"></script>
-
-    <style>
-        /* 🔥 FORCE FIX NAVBAR */
-.navbar-custom {
-    position: fixed !important;   /* force override */
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999;
-
-    background: transparent !important;  /* remove blue bar */
-}
-
-/* container for alignment */
-.nav-container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px 40px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* LOGO */
-.logo {
-    color: #fff;
-    font-size: 22px;
-    font-weight: 700;
-}
-
-/* MENU */
-.menu a {
-    color: #fff !important;
-    text-decoration: none;
-    margin-left: 50px;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-/* ACTIVE + HOVER */
-.menu a:hover,
-.menu a.active {
-    color: #ff6a00 !important;
-}
-
-/* 🔥 REMOVE ANY BACKGROUND FROM HEADER NAV */
-header nav {
-    background: transparent !important;
-}
-
-/* 🔥 SCROLL EFFECT */
-.navbar-scrolled {
-    background: rgba(0,0,0,0.6) !important;
-    backdrop-filter: blur(10px);
-}
-
-/* MOBILE FIX */
-@media(max-width:768px){
-    .nav-container {
-        padding: 15px 20px;
-    }
-
-    .menu a {
-        margin-left: 15px;
-        font-size: 14px;
-    }
-}
-    </style>
 </head>
 <body>
 
     <header>
-       <nav class="navbar-custom">
-    <div class="nav-container">
-        <div class="logo">SRI LANKA</div>
-
-        <div class="menu">
-            <a href="index.html" class="active">Home</a>
-            <a href="about.html">About</a>
-            <a href="explore.html">Explore Places</a>
-            <a href="#">Contact</a>
-        </div>
-    </div>
-</nav>
+        <nav class="navbar-custom">
+            
+            <div class="menu">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="explore.html">Explore Placese</a>
+                <a href="#">Contact</a>
+            </div>
+        </nav>
         
     </header>
 
@@ -127,12 +55,5 @@ header nav {
     </div>
 
     <script src="index.js"></script>
-
-        <script>
-window.addEventListener("scroll", function(){
-    document.querySelector(".navbar-custom")
-    .classList.toggle("navbar-scrolled", window.scrollY > 50);
-});
-</script>
 </body>
 </html>
