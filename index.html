@@ -4,30 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SRI LANKA TRAVEL</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel='stylesheet' media='screen and (min-width: 100px) and (max-width: 799px)' href='mobile-style.css' />
     <link rel='stylesheet' media='screen and (min-width: 800px) and (max-width: 1439px)' href='medium-style.css' />
     <link rel="stylesheet" media="screen and (min-device-width: 1440px)" href="desktop-style.css" />
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9025002091352978"
      crossorigin="anonymous"></script>
+
+    <style>
+    /* 🔥 NAVBAR FIX */
+    .navbar-custom {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 15px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(0,0,0,0.5);
+        backdrop-filter: blur(8px);
+        z-index: 1000;
+    }
+
+    .navbar-custom .logo {
+        color: white;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    .navbar-custom .menu a {
+        color: white;
+        text-decoration: none;
+        margin-left: 25px;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+    .navbar-custom .menu a:hover,
+    .navbar-custom .menu a.active {
+        color: #f39c12;
+    }
+
+    /* FIX HEADER OVERLAP */
+    header {
+        padding-top: 70px;
+    }
+
+    /* MOBILE */
+    @media(max-width:768px){
+        .navbar-custom {
+            padding: 10px 20px;
+        }
+
+        .navbar-custom .menu a {
+            margin-left: 15px;
+            font-size: 14px;
+        }
+
+        .navbar-custom .logo {
+            font-size: 16px;
+        }
+    }
+    </style>
+
 </head>
+
 <body>
 
     <header>
+        <!-- ✅ FIXED NAVBAR -->
         <nav class="navbar-custom">
-            
+            <div class="logo">SRI LANKA</div>
+
             <div class="menu">
                 <a href="index.html" class="active">Home</a>
                 <a href="about.html">About</a>
-                <a href="explore.html">Explore Placese</a>
+                <a href="explore.html">Explore Places</a>
                 <a href="#">Contact</a>
             </div>
         </nav>
+
         <div id="clock" class="timeline">
             <h4 id="date-time"></h4>
         </div>
     </header>
+
+    <!-- ❌ NOTHING CHANGED BELOW -->
 
     <div class="carousel">
         <div class="list">
@@ -48,10 +114,6 @@
                     </div>
                 </div>
             </div>
-
-          
-
-  
 
         <div class="time-bar"></div>
     </div>
