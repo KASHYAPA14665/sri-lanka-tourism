@@ -13,155 +13,127 @@
     --accent: #f39c12;
     --light: #f4f4f4;
     --dark: #1a1a1a;
-    --glass: rgba(255,255,255,0.1);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
 body {
     background: var(--light);
 }
 
-/* ✅ NAVBAR FIX */
-.navbar-custom {
+/* NAVBAR */
+.navbar {
     position: fixed;
-    top: 0;
     width: 100%;
+    top: 0;
     padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(0,0,0,0.4);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
+    z-index:1000;
 }
 
-.menu a {
-    color: white;
-    text-decoration: none;
-    margin-left: 25px;
-    font-weight: 500;
-    transition: 0.3s;
+.navbar a {
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
 }
 
-.menu a:hover,
-.menu .active {
+.navbar a:hover {
     color: var(--accent);
 }
 
 /* HERO */
 header {
-    height: 80vh;
+    height:80vh;
     background:
     linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url('https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=2000&q=80');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
     color:white;
     text-align:center;
     padding-top:80px;
 }
 
 header h1 {
-    font-size: 3.5rem;
+    font-size:3rem;
 }
 
-/* GRID */
+/* CONTENT */
 .container {
-    max-width: 1200px;
-    margin: -50px auto 50px;
-    padding: 20px;
+    max-width:1200px;
+    margin:50px auto;
+    padding:20px;
 }
 
 .explore-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-    gap: 25px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
 }
 
+/* CARD */
 .card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    transition: 0.3s;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,0.1);
+    transition:0.3s;
 }
 
 .card:hover {
-    transform: translateY(-10px);
+    transform:translateY(-10px);
 }
 
-/* ✅ IMAGE FIX */
-.card-img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-
-/* fallback if image fails */
-.card-img.error {
-    content: url('https://via.placeholder.com/800x400?text=Image+Not+Available');
+.card img {
+    width:100%;
+    height:220px;
+    object-fit:cover;
 }
 
 .card-content {
-    padding: 20px;
+    padding:20px;
 }
 
-.category-tag {
-    background: var(--primary);
-    color: white;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-}
-
+/* BUTTON */
 .btn {
     display:inline-block;
     margin-top:10px;
     padding:8px 15px;
     background:var(--dark);
     color:white;
-    border-radius:8px;
     text-decoration:none;
+    border-radius:8px;
 }
 
+/* FOOTER */
 footer {
-    background: var(--dark);
+    background:var(--dark);
     color:white;
     text-align:center;
     padding:30px;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-    .menu a {
-        margin-left: 15px;
-        font-size: 14px;
-    }
-
-    header h1 {
-        font-size: 2.2rem;
-    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav class="navbar-custom">
+<nav class="navbar">
     <div style="color:white;font-weight:700;">Sri Lanka</div>
-    <div class="menu">
-        <a href="#" class="active">Home</a>
+    <div>
+        <a href="#">Home</a>
         <a href="#">About</a>
         <a href="#">Explore</a>
         <a href="#">Contact</a>
@@ -170,38 +142,73 @@ footer {
 
 <header>
     <h1>Explore Sri Lanka</h1>
-    <p>Discover paradise on earth</p>
+    <p>Discover the beauty of the island</p>
 </header>
 
 <div class="container">
-
 <div class="explore-grid">
 
-<!-- CARD -->
+<!-- Sigiriya -->
 <div class="card">
-<img class="card-img" loading="lazy"
-src="https://images.unsplash.com/photo-1588598116712-32a524a87c10?auto=format&fit=crop&w=800&q=80"
-onerror="this.src='https://via.placeholder.com/800x400?text=Image+Error'">
+<img src="https://images.unsplash.com/photo-1593693411515-c20261bcad6e?auto=format&fit=crop&w=800&q=80"
+onerror="this.src='https://via.placeholder.com/800x400?text=Image+Unavailable'">
 <div class="card-content">
-<span class="category-tag">Heritage</span>
-<h3>Sigiriya</h3>
-<p>Ancient rock fortress.</p>
+<h3>Sigiriya Rock</h3>
+<p>Ancient rock fortress and UNESCO site.</p>
 </div>
 </div>
 
+<!-- Ella -->
 <div class="card">
-<img class="card-img" loading="lazy"
-src="https://images.unsplash.com/photo-1552423158-958265b7725b?auto=format&fit=crop&w=800&q=80"
-onerror="this.src='https://via.placeholder.com/800x400?text=Image+Error'">
+<img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=800&q=80"
+onerror="this.src='https://via.placeholder.com/800x400?text=Image+Unavailable'">
 <div class="card-content">
-<span class="category-tag">Nature</span>
 <h3>Ella</h3>
-<p>Mountain paradise views.</p>
+<p>Beautiful mountain village with views.</p>
+</div>
+</div>
+
+<!-- Mirissa -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+onerror="this.src='https://via.placeholder.com/800x400?text=Image+Unavailable'">
+<div class="card-content">
+<h3>Mirissa Beach</h3>
+<p>Famous for whale watching and sunsets.</p>
+</div>
+</div>
+
+<!-- Galle -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1586500036706-41963de24d8b?auto=format&fit=crop&w=800&q=80"
+onerror="this.src='https://via.placeholder.com/800x400?text=Image+Unavailable'">
+<div class="card-content">
+<h3>Galle Fort</h3>
+<p>Historic Dutch fort and coastal city.</p>
+</div>
+</div>
+
+<!-- Kandy -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?auto=format&fit=crop&w=800&q=80"
+onerror="this.src='https://via.placeholder.com/800x400?text=Image+Unavailable'">
+<div class="card-content">
+<h3>Kandy Temple</h3>
+<p>Sacred Temple of the Tooth Relic.</p>
+</div>
+</div>
+
+<!-- Yala -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1549366021-9f761d040a94?auto=format&fit=crop&w=800&q=80"
+onerror="this.src='https://via.placeholder.com/800x400?text=Image+Unavailable'">
+<div class="card-content">
+<h3>Yala National Park</h3>
+<p>Best place to see leopards in Sri Lanka.</p>
 </div>
 </div>
 
 </div>
-
 </div>
 
 <footer>
